@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: singleton
+
+logging:
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN # 提高打印eureka的日志级别

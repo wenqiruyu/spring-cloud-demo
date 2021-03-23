@@ -1,0 +1,21 @@
+### SpringCloud注册中心EurekaServer部署 - 添加简单认证功能
+
+server:
+  port: 8761
+
+spring:
+  application:
+    name: spring-cloud-eureka-server # 指定服务名称
+  security:
+    user:
+      name: yingx
+      password: wenqiyu # 为EurekaServer添加认证功能
+
+eureka:
+  instance:
+    hostname: localhost # 指定主机地址
+  client:
+    fetch-registry: false # 指定是否要从注册中心获取服务（注册中心不需要开启）
+    register-with-eureka: false # 指定是否要注册到注册中心（注册中心不需要开启）
+  server:
+    enable-self-preservation: false # 关闭保护模式

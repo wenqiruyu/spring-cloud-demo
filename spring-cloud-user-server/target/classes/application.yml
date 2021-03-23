@@ -1,0 +1,19 @@
+server:
+  port: 10529
+
+spring:
+  application:
+    name: user-server # 指定服务名称
+
+eureka:
+  client:
+    register-with-eureka: true # 注册到Eureka的注册中心
+    fetch-registry: true # 获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # 配置注册中心地址
+  instance:
+    preferIpAddress: true # 优先使用IP用作主机名进行注册
+
+logging:
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN # 提高打印eureka的日志级别

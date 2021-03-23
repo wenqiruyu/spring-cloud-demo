@@ -1,0 +1,25 @@
+server:
+  port: 10530 # 指定项目端口
+
+spring:
+  application:
+    name: gateway-server # 制定项目名称
+  cloud:
+    gateway:
+      routes:
+        - id: user-server # 网关路由ID，除需唯一无其他特殊要求
+          uri: http://localhost:10529 # 网关路由的URI
+          predicates: # 网关路由断言集
+            - Path=/usr/{name}
+#eureka:
+#  client:
+#    register-with-eureka: true # 注册到Eureka的注册中心
+#    fetch-registry: true # 获取注册实例列表
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/ # 配置注册中心地址
+#  instance:
+#    preferIpAddress: true # 优先使用IP用作主机名进行注册
+#
+#logging:
+#  level:
+#    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN # 提高打印eureka的日志级别
